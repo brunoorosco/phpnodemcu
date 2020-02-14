@@ -1,0 +1,11 @@
+.main_footer {
+    text-align: center;
+    padding: 50px;
+    color: #cccccc;
+}
+
+#fundo_form{
+    margin-top: 10vh;
+    background-color: rgba(50, 50, 50, 0.5);
+    border-radius: 5px;
+}
