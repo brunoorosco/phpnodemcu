@@ -6,7 +6,6 @@ define(
         "name" => "#IST",
         "desc" => "Instituto Senai de Tecnologia Têxtil",
         "domain" => "localhost/nodeMcu",
-        //"domain" => "slab.sp.senai.br/",
         "locale" => "pt-br",
         "root" => "http://localhost/nodeMcu",
         //"root" => "https://slab.sp.senai.br",

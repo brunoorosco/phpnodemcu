@@ -6,12 +6,13 @@
  */
 function site(string $param = null): string
 {
-    if ($param && !empty(SITE[$param])) {
-        //  return SITE[$param];
+   //if ($param && !empty(SITE[$param])) {
+    if ($param ) {
         return SITE['root'] . "/{$param}";
     }
     return SITE['root'];
 }
+
 function routeImage(string $imageUrl): string
 {
     return "https://via.placeholder.com/468x60/0000FF/808080?Text={$imageUrl}";

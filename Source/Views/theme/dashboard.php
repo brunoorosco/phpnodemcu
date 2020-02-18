@@ -14,7 +14,7 @@
                     <a href="" class="widget-box__link" target="">
                         <div class="widget-box__content">
                             <span class="widget-box__icon">
-                                <img src="<?= asset('img/costura.png') ?>" class="img-widget" width="50px" height="50px" alt="Order Usage">
+                                <img src="<?= asset('img/maqcostura.png') ?>" class="img-widget" width="50px" height="50px" alt="Order Usage">
                             </span>
                             <span class="widget-box__subtitle text-center">
                                 <span>Máquina 1</span>

@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="<?= asset('Favicon.ico') ?>" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="<?= asset('Favicon.ico') ?>" type="image/x-icon"> -->
     <link href='<?= asset('bootstrap-4.1.3/css/bootstrap.min.css') ?>' rel="stylesheet">
     <link href='<?= asset('font-awesome/css/font-awesome.css') ?>' rel="stylesheet">
     <link href="<?= asset('css/sidebar.css') ?>" rel="stylesheet">
-    <link href="<?= asset('css/tabela.css') ?>" rel="stylesheet">
+    <link href="<?= asset('css/load.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= asset('css/tabela.css') ?>" rel="stylesheet"> -->
     <!-- Toastr style -->
-    <link href="<?= asset('css/plugins/toastr/toastr.min.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= asset('css/plugins/toastr/toastr.min.css') ?>" rel="stylesheet"> -->
 
     <!-- Gritter -->
-    <link href="<?= asset('js/plugins/gritter/jquery.gritter.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= asset('js/plugins/gritter/jquery.gritter.css') ?>" rel="stylesheet"> -->
 
-    <link href="<?= asset('css/animate.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= asset('css/animate.css') ?>" rel="stylesheet"> -->
     <?= $v->section("css"); ?>
     <title><?= $v->e($title) ?></title>
 </head>
 
 <body>
+
+    <div class="ajax_load">
+        <div class="ajax_load_box">
+            <div class="ajax_load_box_circle"></div>
+            <div class="ajax_load_box_title">Aguarde, carrengando...</div>
+        </div>
+    </div>
     <div class="page-wrapper chiller-theme toggled">
         <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
             <i class="fa fa-bars"></i>
@@ -76,13 +83,10 @@
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="<?= site("comp/add"); ?>">Composições</a></li>
+                                    <li><a href="<?= site("users/new"); ?>">Funcionário</a></li>
+                                    <li><a href="<?= site("sensors/new"); ?>">Máquina</a></li>
                                     <li><a href="<?= site("empresa/add"); ?>">Empresas</a></li>
                                     <li><a href="<?= site("func/add"); ?>">Funcionários</a></li>
-                                    <li><a href="#">Normas</a> </li>
-                                    <li><a href="../produtos/" class="lk_lista">Produtos</a></li>
-                                    <li><a href="../ensaios/" class="lk_lista">Tipos de Ensaios</a></li>
-                                    <li><a href="../tiposTecido/" class="lk_lista">Tipos de Tecidos</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -94,41 +98,20 @@
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="<?= site("comp"); ?>">Composições</a></li>
+                                    <li><a href="<?= site("sensors"); ?>">Máquinas</a></li>
                                     <li><a href="<?= site("empresa"); ?>">Empresas</a></li>
                                     <li><a href="<?= site("ensaio"); ?>">Ensaios</a></li>
                                     <li><a href="<?= site("equipamento"); ?>">Equipamentos</a></li>
-                                    <li><a href="<?= site("func"); ?>">Funcionários</a></li>
-                                    <li><a href="<?= site("atendimento/plano"); ?>">Plano de Atendimento</a></li>
-                                    <li><a href="<?= site("norma"); ?>">Normas</a></li>
-                                    <li><a href="<?= site("orcamento"); ?>">Orçamentos</a></li>
-                                    <li>
-                                        <a href="#">Outros</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-print"></i>
-                                <span>Impressão</span>
+                        <li class="">
+                            <a href="<?= site()?>">
+                                <i class="fa fa-tachometer"></i>
+                                <span>Dashboard</span>
                             </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Etiquetas</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Plano</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Icons</a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
@@ -226,6 +209,8 @@
 
     <script src="<?= asset('js/popper.js') ?>"></script>
     <script src="<?= asset('bootstrap-4.1.3/js/bootstrap.min.js') ?>"></script>
+
+    <script src="<?= asset('js/script.min.js') ?>"></script>
 
     <!-- Peity -->
     <script src="<?= asset('js/plugins/peity/jquery.peity.min.js') ?>"></script>

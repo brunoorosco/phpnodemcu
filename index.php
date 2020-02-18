@@ -33,17 +33,20 @@ $route->get("/", "App:home","app.home");
 $route->get("/logoff", "App:logoff","app.logoff");
 
 // /**
-//  * Sensors // leitura dos dados 
+//  * Sensors // GET
 //  */
 $route->group("/sensors");
-$route->post("/{id}", "Sensors:read","sensors.read");
+$route->get("/", "Sensors:read","sensors.read");
 $route->get("/new", "Sensors:create","sensors.create");
+
+// /**
+//  * Sensors // metodo POST, PUT, DELETE 
+//  */
+$route->group("/sensors");
+$route->post("/", "Sensors:test","sensors.test");
+$route->post("/new", "Sensors:save","sensors.save");
 $route->put("/{id}", "Sensors:edit","sensors.edit");
 $route->delete("/{id}", "Sensors:delete","sensors.delete");
-
-
-
-
 
 
 /**
