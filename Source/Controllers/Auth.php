@@ -71,4 +71,40 @@ class Auth extends Controller
             "url" => $this->router->route("app.home")
         ]);
     }
+
+
+    public function loginSensor($data): void
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $email = filter_var($data["user"], FILTER_DEFAULT);
+        $passwd = filter_var($data["pass"], FILTER_DEFAULT);
+     
+        echo $email;
+
+        if (!$email || !$passwd) {
+            echo $this->ajaxResponse("message", [
+                "type" => "alert",
+                "message" => "Informe seu e-mail e senha para logar"
+            ]);
+            return;
+        }
+
+        $user = (new UserModel())->find("email = :e", "e={$email}")->fetch(false);
+        //$passwd = md5($passwd);
+        // if (!$user ||  $passwd != $user->Senha) {
+         if (!$user || !password_verify($passwd, $user->passwd)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "alert",
+                "message" => "E-mail ou senha não conferem!"
+            ]);
+            return;
+        }
+
+        $_SESSION["user"] = $user->id;
+        $_SESSION["userName"] = $user->first_name;
+        //$_SESSION["userJob"] = $user->Codigo;
+
+        echo $this->ajaxResponse("redirect",["url" => $this->router->route("app.home")]);
+    }
 }

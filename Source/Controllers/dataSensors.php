@@ -60,18 +60,12 @@ class Sensors extends Controller
 
     public function test($data)
     {
-        $data = json_decode(file_get_contents('php://input'), true);
-     
-        $email = filter_var($data["value"], FILTER_DEFAULT);
-        $passwd = filter_var($data["name"], FILTER_DEFAULT);
-      
-        $this->logMsg($email);
-        $this->logMsg($passwd);
 
-        //  $data = json_decode(file_get_contents('php://input'), true);
-        // $this->logMsg($data['value']);
-        // $this->logMsg($data['name']);
-        // $this->logMsg($data['id']);
+        $data = json_decode(file_get_contents('php://input'), true);
+       
+        $this->logMsg($data['value']);
+        $this->logMsg($data['name']);
+        $this->logMsg($data['id']);
      
     }
 

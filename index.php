@@ -22,6 +22,7 @@ $route->get("/senha/{email}/{forget}", "Web:reset", "web.reset");
 //  */
 $route->group(null);
 $route->post("/login", "Auth:login","auth.login");
+$route->post("/login/sensor", "Auth:loginSensor","auth.loginsensor");
 $route->post("/register", "Auth:register","auth.register");
 $route->post("/forget", "Auth:forget", "auth.forget");
 $route->post("/reset", "Auth:reset", "auth.reset");
