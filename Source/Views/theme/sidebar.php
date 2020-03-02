@@ -4,19 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="shortcut icon" href="<?= asset('Favicon.ico') ?>" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="<?= asset('img/Favicon.ico') ?>" type="image/x-icon">
     <link href='<?= asset('bootstrap-4.1.3/css/bootstrap.min.css') ?>' rel="stylesheet">
     <link href='<?= asset('font-awesome/css/font-awesome.css') ?>' rel="stylesheet">
     <link href="<?= asset('css/sidebar.css') ?>" rel="stylesheet">
     <link href="<?= asset('css/load.css') ?>" rel="stylesheet">
     <!-- <link href="<?= asset('css/tabela.css') ?>" rel="stylesheet"> -->
-    <!-- Toastr style -->
-    <!-- <link href="<?= asset('css/plugins/toastr/toastr.min.css') ?>" rel="stylesheet"> -->
 
-    <!-- Gritter -->
-    <!-- <link href="<?= asset('js/plugins/gritter/jquery.gritter.css') ?>" rel="stylesheet"> -->
-
-    <!-- <link href="<?= asset('css/animate.css') ?>" rel="stylesheet"> -->
     <?= $v->section("css"); ?>
     <title><?= $v->e($title) ?></title>
 </head>
@@ -107,7 +101,7 @@
                             </div>
                         </li>
                         <li class="">
-                            <a href="<?= site()?>">
+                            <a href="<?= site() ?>">
                                 <i class="fa fa-tachometer"></i>
                                 <span>Dashboard</span>
                             </a>

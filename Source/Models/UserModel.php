@@ -9,7 +9,7 @@ class UserModel extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("users",["first_name","last_name","passwd","email"],"id",true);
+        parent::__construct("users",["first_name","last_name"],"id",true);
     }
 
     
