@@ -74,11 +74,12 @@ class Sensors extends Controller
         // $this->logMsg($data['value']);
         // $this->logMsg($data['name']);
         // $this->logMsg($data['id']);
-        echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "teste"
-            ]);
-            return;
+        // echo $this->ajaxResponse("message", [
+        //         "type" => "error",
+        //         "message" => "teste"
+        //     ]);
+      echo 'ok';
+        return;
              
     }
 
