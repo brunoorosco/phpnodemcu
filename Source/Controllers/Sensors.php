@@ -16,12 +16,12 @@ class Sensors extends Controller
     public function __construct($router)
     {
         parent::__construct($router);
-        if (empty($_SESSION["user"]) || !$this->user = (new UserModel())->findById($_SESSION["user"])) {
-                unset($_SESSION["user"]);
+        // if (empty($_SESSION["user"]) || !$this->user = (new UserModel())->findById($_SESSION["user"])) {
+        //         unset($_SESSION["user"]);
 
-                flash("error", "Acesso negado!");
-                $this->router->redirect("web.login");
-        }
+        //         flash("error", "Acesso negado!");
+        //         $this->router->redirect("web.login");
+        // }
     }
 
     public function read($data): void
@@ -68,11 +68,18 @@ class Sensors extends Controller
         $this->logMsg($email);
         $this->logMsg($passwd);
 
+
+
         //  $data = json_decode(file_get_contents('php://input'), true);
         // $this->logMsg($data['value']);
         // $this->logMsg($data['name']);
         // $this->logMsg($data['id']);
-     
+        echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "teste"
+            ]);
+            return;
+             
     }
 
 
