@@ -37,7 +37,7 @@
                 </div>
                 <div class="sidebar-header">
                     <div class="user-pic">
-                        <img alt="image" class="img-circle" src="<?= asset('img/avatar-2.png') ?>" width="45" />
+                        <img alt="image" class="img-circle" src="<?= asset('img/avatar2.png') ?>" width="60" />
                     </div>
                     <div class="user-info">
                         <span class="user-name">

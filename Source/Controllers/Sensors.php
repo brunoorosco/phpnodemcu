@@ -29,7 +29,7 @@ class Sensors extends Controller
         $this->sensor = (new SensorsModel())->find()->fetch(true);
 
         $head = $this->seo->optimize(
-            "Bem vind@ {$this->user->Nome} | " . site("name"), //title
+            "Bem vind@ {$_SESSION["user"]} | " . site("name"), //title
             site("desc"), //descrição
             $this->router->route("app.home"), //url
             routeImage("Home") //image
@@ -45,7 +45,7 @@ class Sensors extends Controller
     public function create($data): void
     {
         $head = $this->seo->optimize(
-            "Bem vind@ {$this->user->Nome} | " . site("name"), //title
+            "Bem vind@ {$_SESSION["user"]} | " . site("name"), //title
             site("desc"), //descrição
             $this->router->route("app.home"), //url
             routeImage("Home") //image
